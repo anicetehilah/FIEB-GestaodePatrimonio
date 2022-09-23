@@ -1,0 +1,261 @@
+"DetailScreenBELVAL As screen.'phoneDetailViewLayout_ver3.0'":
+
+    RectQuickActionBar2_4 As rectangle:
+        Fill: =RGBA(111, 37, 65, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    IconBackarrow1_4 As icon.ChevronLeft:
+        AccessibleLabel: =Self.Tooltip
+        Height: =88
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(ScreenBELVAL, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Voltar para a lista"
+        Width: =88
+        ZIndex: =2
+
+    IconEdit1_4 As icon.Edit:
+        AccessibleLabel: =Self.Tooltip
+        DisplayMode: =If(DataSourceInfo([@'FIEB JARDIM BELVAL | Gestão de Patrimônio'], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Edit
+        OnSelect: =EditForm(EditForm1_8);Navigate(EditItemScreenBELVAL, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Editar esse item"
+        Width: =88
+        X: =Parent.Width - Self.Width
+        ZIndex: =3
+
+    IconDelete1_4 As icon.Trash:
+        AccessibleLabel: =Self.Tooltip
+        DisplayMode: =If(!IsBlank(BrowseGalleryBelval.Selected) && DataSourceInfo([@'FIEB JARDIM BELVAL | Gestão de Patrimônio'], DataSourceInfo.DeletePermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Trash
+        OnSelect: =Remove([@'FIEB JARDIM BELVAL | Gestão de Patrimônio'], BrowseGalleryBelval.Selected); If (IsEmpty(Errors([@'FIEB JARDIM BELVAL | Gestão de Patrimônio'], BrowseGalleryBelval.Selected)), Back())
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Excluir esse item"
+        Visible: =false
+        Width: =88
+        X: =Parent.Width - IconEdit1_4.Width - Self.Width
+        ZIndex: =4
+
+    LblAppName2_4 As label:
+        Height: =88
+        Size: =27
+        Text: ="PATRIMÔNIO"
+        Width: =Parent.Width - Self.X - IconDelete1_4.Width - IconEdit1_4.Width
+        Wrap: =false
+        X: =IconBackarrow1_4.X + IconBackarrow1_4.Width
+        ZIndex: =5
+
+    DetailForm1_4 As formViewer:
+        AcceptsFocus: =false
+        DataSource: ='FIEB JARDIM BELVAL | Gestão de Patrimônio'
+        Height: =1051
+        Item: =BrowseGalleryBelval.Selected
+        Width: =Parent.Width
+        Y: =85
+        ZIndex: =6
+
+        Chapa_DataCard1_4 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Chapa
+            DisplayMode: =DisplayMode.View
+            DisplayName: ="Chapa"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey1_4 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue1_4 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey1_4.Y + DataCardKey1_4.Height + 5
+                ZIndex: =2
+
+        Local_DataCard1_4 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Local"
+            Default: =ThisItem.Local
+            DisplayMode: =DisplayMode.View
+            DisplayName: ="Local"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =123
+            Required: =false
+            Update: =DataCardValue2_4.Selected
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey2_4 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue2_4 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@'FIEB JARDIM BELVAL | Gestão de Patrimônio'].Local)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('FIEB JARDIM BELVAL | Gestão de Patrimônio'.Local,DataCardValue2_4.SearchText)
+                SelectMultiple: =false
+                Size: =21
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey2_4.Y + DataCardKey2_4.Height + 5
+                ZIndex: =2
+
+            ErrorMessage1_4 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue2_4.Y + DataCardValue2_4.Height
+                ZIndex: =3
+
+            StarVisible1_4 As label:
+                Align: =Align.Center
+                Height: =DataCardKey2_4.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey2_4.Y
+                ZIndex: =4
+
+        Sublocal_DataCard1_4 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Sublocal"
+            Default: =ThisItem.Sublocal
+            DisplayMode: =DisplayMode.View
+            DisplayName: ="Sublocal"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =93
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey3_4 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue3_4 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey3_4.Y + DataCardKey3_4.Height + 5
+                ZIndex: =2
+
+        Descrição_DataCard1_4 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Descri_x00e7__x00e3_o"
+            Default: =ThisItem.Descrição
+            DisplayMode: =DisplayMode.View
+            DisplayName: ="Descrição"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =98
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey4_4 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue4_4 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey4_4.Y + DataCardKey4_4.Height + 5
+                ZIndex: =2
+

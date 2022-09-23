@@ -1,0 +1,98 @@
+{
+  "7d8a1d1e-f1a5-4801-916c-21065af2f4fa": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1591/1.0.1591.2961/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://fiebedu.sharepoint.com/sites/SolicitacaoServicosDepartamentos": {
+        "dataSources": {
+          "FIEB ADMINISTRATIVO | Gestão de Patrimônio": {
+            "tableName": "263fba73-cbcc-4169-884d-5fd835f043bc"
+          },
+          "FIEB ALDEIA DA SERRA | Gestão de Patrimônio": {
+            "tableName": "cfd7b225-9522-46f7-b333-4d6ddc5e8e16"
+          },
+          "FIEB ALPHAVILLE | Gestão de Patrimônio": {
+            "tableName": "fb61743d-c9f6-43f5-bc0f-c9b8e0dbd6bf"
+          },
+          "FIEB ENGENHO NOVO | Gestão de Patrimônio": {
+            "tableName": "7bca6c55-ccbf-4f18-9251-46da131798fd"
+          },
+          "FIEB JARDIM BELVAL | Gestão de Patrimônio": {
+            "tableName": "741795d7-72a4-469e-8ab6-113ec2dbe024"
+          },
+          "FIEB JARDIM MUTINGA | Gestão de Patrimônio": {
+            "tableName": "068686dd-467b-4bbb-9262-acc1cf472d11"
+          },
+          "FIEB JARDIM PAULISTA | Gestão de Patrimônio": {
+            "tableName": "7dc19bc8-bb54-48a2-b76d-c6ff4e5ab3e4"
+          },
+          "FIEB MARIA CRISTINA | Gestão de Patrimônio": {
+            "tableName": "1763eba1-045a-48c3-8bca-0c0ce3418f7b"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "FIEB ENGENHO NOVO | Gestão de Patrimônio",
+      "FIEB JARDIM BELVAL | Gestão de Patrimônio",
+      "FIEB JARDIM MUTINGA | Gestão de Patrimônio",
+      "FIEB JARDIM PAULISTA | Gestão de Patrimônio",
+      "FIEB MARIA CRISTINA | Gestão de Patrimônio",
+      "FIEB ADMINISTRATIVO | Gestão de Patrimônio",
+      "FIEB ALDEIA DA SERRA | Gestão de Patrimônio",
+      "FIEB ALPHAVILLE | Gestão de Patrimônio"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "7d8a1d1e-f1a5-4801-916c-21065af2f4fa"
+  },
+  "9b2d1296-f4d1-4a13-9d70-2f50018fd436": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1591/1.0.1591.2961/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://fiebedu.sharepoint.com/sites/SolicitacaoServicosDepartamentos": {
+        "dataSources": {
+          "FIEB PARQUE IMPERIAL | Gestão de Patrimônio": {
+            "tableName": "35f82ae9-efb0-42b4-902e-fb12d899e1a3"
+          },
+          "FIEB PARQUE VIANA | Gestão de Patrimônio": {
+            "tableName": "8aaa8657-3230-455f-a72d-5a7dfb5b93be"
+          },
+          "UAB | Gestão de Patrimônio": {
+            "tableName": "79d3e043-2292-4199-909f-739167e5fa83"
+          },
+          "Unidades": {
+            "tableName": "ef0d5aad-2d56-4f3d-91ac-da993e0c43e6"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "FIEB PARQUE IMPERIAL | Gestão de Patrimônio",
+      "FIEB PARQUE VIANA | Gestão de Patrimônio",
+      "UAB | Gestão de Patrimônio",
+      "Unidades"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "9b2d1296-f4d1-4a13-9d70-2f50018fd436"
+  }
+}

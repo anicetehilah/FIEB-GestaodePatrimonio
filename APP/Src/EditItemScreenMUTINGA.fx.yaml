@@ -1,0 +1,578 @@
+"EditItemScreenMUTINGA As screen.'phoneDetailEditLayout_ver3.0'":
+
+    RectQuickActionBar3_10 As rectangle:
+        Fill: =RGBA(111, 37, 65, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    IconCancel1_10 As icon.Cancel:
+        AccessibleLabel: =Self.Tooltip
+        Height: =88
+        Icon: =Icon.Cancel
+        OnSelect: =ResetForm(EditForm1_10);Back()
+        PaddingBottom: =22
+        PaddingLeft: =22
+        PaddingRight: =22
+        PaddingTop: =22
+        TabIndex: =0
+        Tooltip: ="Cancelar item"
+        Width: =88
+        ZIndex: =2
+
+    IconAccept1_10 As icon.Check:
+        AccessibleLabel: =Self.Tooltip
+        Height: =88
+        Icon: =Icon.Check
+        OnSelect: =SubmitForm(EditForm1_10)
+        PaddingBottom: =22
+        PaddingLeft: =22
+        PaddingRight: =22
+        PaddingTop: =22
+        TabIndex: =0
+        Tooltip: ="Enviar item"
+        Width: =88
+        X: =Parent.Width - Self.Width
+        ZIndex: =3
+
+    LblAppName3_10 As label:
+        Fill: =RGBA(58, 58, 58, 0)
+        Height: =88
+        Size: =27
+        Text: ="PATRIMÔNIO"
+        Width: =Parent.Width - IconCancel1_10.Width - IconAccept1_10.Width
+        Wrap: =false
+        X: =IconCancel1_10.X + IconCancel1_10.Width
+        ZIndex: =4
+
+    EditForm1_10 As form:
+        AcceptsFocus: =false
+        DataSource: =[@'FIEB JARDIM MUTINGA | Gestão de Patrimônio']
+        Height: =1046
+        Item: =BrowseGalleryMutinga.Selected
+        OnSuccess: =Notify("Item de patrimônio atualizado com sucesso!", NotificationType.Success); Navigate(ScreenMUTINGA, ScreenTransition.Fade)
+        Width: =Parent.Width
+        Y: =90
+        ZIndex: =5
+
+        Chapa_DataCard2_6 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Chapa
+            DisplayMode: =View
+            DisplayName: ="Chapa"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =123
+            MaxLength: =DataSourceInfo([@'FIEB JARDIM MUTINGA | Gestão de Patrimônio'], DataSourceInfo.MaxLength, "Title")
+            Required: =false
+            Update: =DataCardValue7_6.Text
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey7_6 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue7_6 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey7_6.Y + DataCardKey7_6.Height + 5
+                ZIndex: =2
+
+            ErrorMessage3_6 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue7_6.Y + DataCardValue7_6.Height
+                ZIndex: =3
+
+            StarVisible3_6 As label:
+                Align: =Align.Center
+                Height: =DataCardKey7_6.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey7_6.Y
+                ZIndex: =4
+
+        Descrição_DataCard2_10 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Descri_x00e7__x00e3_o"
+            Default: =ThisItem.Descrição
+            DisplayMode: =View
+            DisplayName: ="Descrição"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'FIEB JARDIM MUTINGA | Gestão de Patrimônio'],DataSourceInfo.MaxLength, "Descri_x00e7__x00e3_o")
+            Required: =false
+            Update: =DataCardValue10_10.Text
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey10_10 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue10_10 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey10_10.Y + DataCardKey10_10.Height + 5
+                ZIndex: =2
+
+            ErrorMessage6_10 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue10_10.Y + DataCardValue10_10.Height
+                ZIndex: =3
+
+            StarVisible6_10 As label:
+                Align: =Align.Center
+                Height: =DataCardKey10_10.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey10_10.Y
+                ZIndex: =4
+
+        Local_DataCard2_10 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Local"
+            Default: =ThisItem.Local
+            DisplayMode: |
+                =View
+            DisplayName: ="Local"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =138
+            Required: =false
+            Update: =DataCardValue8_10.Selected
+            Visible: =true
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey8_10 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue8_10 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@'FIEB JARDIM MUTINGA | Gestão de Patrimônio'].Local)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('FIEB JARDIM MUTINGA | Gestão de Patrimônio'.Local,DataCardValue8_10.SearchText)
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey8_10.Y + DataCardKey8_10.Height + 5
+                ZIndex: =2
+
+            ErrorMessage4_10 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue8_10.Y + DataCardValue8_10.Height
+                ZIndex: =3
+
+            StarVisible4_10 As label:
+                Align: =Align.Center
+                Height: =DataCardKey8_10.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey8_10.Y
+                ZIndex: =4
+
+        Sublocal_DataCard2_10 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Sublocal"
+            Default: =ThisItem.Sublocal
+            DisplayMode: =DisplayMode.View
+            DisplayName: ="Sublocal"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =128
+            MaxLength: =DataSourceInfo([@'FIEB JARDIM MUTINGA | Gestão de Patrimônio'], DataSourceInfo.MaxLength, "Sublocal")
+            Required: =false
+            Update: =Upper(DataCardValue9_10.Text)
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey9_10 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue9_10 As text:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                HoverFill: =RGBA(230, 230, 230, 1)
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey9_10.Y + DataCardKey9_10.Height + 5
+                ZIndex: =2
+
+            ErrorMessage5_10 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue9_10.Y + DataCardValue9_10.Height
+                ZIndex: =3
+
+            StarVisible5_10 As label:
+                Align: =Align.Center
+                Height: =DataCardKey9_10.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey9_10.Y
+                ZIndex: =4
+
+        "'Departamento/Sala_DataCard6' As typedDataCard.comboBoxEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Departamento_x002f_Sala"
+            Default: =ThisItem.'Departamento/Sala'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Departamento/Sala"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue17.Selected
+            Width: =640
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey17 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue17 As combobox:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                ChevronBackground: =RGBA(111, 37, 65, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(0, 0, 0, 1), -20%)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                HoverFill: =RGBA(230, 230, 230, 1)
+                Items: =Choices([@'FIEB JARDIM MUTINGA | Gestão de Patrimônio'].'Departamento/Sala')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedFill: =RGBA(179, 179, 179, 1)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('FIEB JARDIM MUTINGA | Gestão de Patrimônio'.'Departamento/Sala',DataCardValue17.SearchText)
+                SelectionFill: =RGBA(111, 37, 65, 1)
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey17.Y + DataCardKey17.Height + 5
+                ZIndex: =2
+
+            ErrorMessage14 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue17.Y + DataCardValue17.Height
+                ZIndex: =3
+
+            StarVisible14 As label:
+                Align: =Align.Center
+                Height: =DataCardKey17.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey17.Y
+                ZIndex: =4
+
+        "'Enviar para outra Unidade?_DataCard2_10' As typedDataCard.toggleEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Enviar_x0020_para_x0020_outra_x0"
+            Default: =ThisItem.'Enviar_para_outra_unidade?'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Enviar para outra Unidade?"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue11_10.Value
+            Visible: =true
+            Width: =640
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey11_10 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue11_10 As toggleSwitch:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                Height: =49
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                TrueFill: =RGBA(111, 3, 65, 1)
+                Width: =252
+                X: =30
+                Y: =DataCardKey11_10.Y + DataCardKey11_10.Height + 5
+                ZIndex: =2
+
+            ErrorMessage7_10 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue11_10.Y + DataCardValue11_10.Height
+                ZIndex: =3
+
+            StarVisible7_10 As label:
+                Align: =Align.Center
+                Height: =DataCardKey11_10.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey11_10.Y
+                ZIndex: =4
+
+        "'Unidade de destino_DataCard2_10' As typedDataCard.comboBoxEditCard":
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Unidade_x0020_de_x0020_destino"
+            Default: =ThisItem.Unidade_de_destino
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Unidade de destino"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =5
+            Required: =false
+            Update: =DataCardValue12_10.Selected
+            Visible: =If(DataCardValue11_10.Value=true,true,false)
+            Width: =640
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey12_10 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue12_10 As combobox:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                ChevronBackground: =RGBA(111, 37, 65, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(0, 0, 0, 1), -20%)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                HoverFill: =RGBA(204, 204, 204, 1)
+                Items: =Choices([@'FIEB JARDIM MUTINGA | Gestão de Patrimônio'].Unidade_de_destino)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedFill: =RGBA(0, 0, 0, 1)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('FIEB JARDIM MUTINGA | Gestão de Patrimônio'.Unidade_de_destino,DataCardValue12_10.SearchText)
+                SelectionFill: =RGBA(230, 230, 230, 1)
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey12_10.Y + DataCardKey12_10.Height + 5
+                ZIndex: =2
+
+            ErrorMessage8_10 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue12_10.Y + DataCardValue12_10.Height
+                ZIndex: =3
+
+            StarVisible8_10 As label:
+                Align: =Align.Center
+                Height: =DataCardKey12_10.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey12_10.Y
+                ZIndex: =4
+

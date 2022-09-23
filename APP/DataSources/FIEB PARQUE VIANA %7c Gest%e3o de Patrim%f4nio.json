@@ -1,0 +1,49 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2022-08-09T16:45:23.8310000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "{FilenameWithExtension}": "Nome de arquivo com extensão",
+      "{FullPath}": "Caminho Completo",
+      "{Identifier}": "Identificador",
+      "{IsFolder}": "ÉPasta",
+      "{Link}": "Link para o item",
+      "{ModerationComment}": "Comentários associados à aprovação de conteúdo deste item de lista",
+      "{ModerationStatus}": "Status de aprovação de conteúdo",
+      "{Name}": "Nome",
+      "{Path}": "Caminho da pasta",
+      "{Thumbnail}": "Miniatura",
+      "{TriggerWindowEndToken}": "Token de Fim da Janela de Acionamento",
+      "{TriggerWindowStartToken}": "Token de Início da Janela de Acionamento",
+      "{VersionNumber}": "Número da versão",
+      "Author": "Criado por",
+      "Author#Claims": "Criado por Claims",
+      "ComplianceAssetId": "ID de Ativo de Conformidade",
+      "Created": "Criado",
+      "Departamento_x002f_Sala": "Departamento/Sala",
+      "Departamento_x002f_Sala#Id": "Departamento/Sala Id",
+      "Descri_x00e7__x00e3_o": "Descrição",
+      "Editor": "Modificado por",
+      "Editor#Claims": "Modificado por Claims",
+      "Enviar_x0020_para_x0020_outra_x0": "Enviar_para_outra_unidade?",
+      "ID": "ID",
+      "Local": "Local",
+      "Local#Id": "Local Id",
+      "Modified": "Modificado",
+      "Sublocal": "Sublocal",
+      "Title": "Chapa",
+      "Unidade_x0020_de_x0020_destino": "Unidade de destino",
+      "Unidade_x0020_de_x0020_destino#Id": "Unidade de destino Id"
+    },
+    "DatasetName": "https://fiebedu.sharepoint.com/sites/SolicitacaoServicosDepartamentos",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "FIEB PARQUE VIANA | Gestão de Patrimônio",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

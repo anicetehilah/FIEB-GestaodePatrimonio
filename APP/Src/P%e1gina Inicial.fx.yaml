@@ -1,0 +1,97 @@
+"'Página Inicial' As screen":
+
+    RectQuickActionBar1_12 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =476
+        Width: =Parent.Width
+        Y: =360
+        ZIndex: =1
+
+    RectQuickActionBar1_11 As rectangle:
+        Fill: =RGBA(111, 37, 65, 1)
+        Height: =181
+        Width: =Parent.Width
+        Y: =954
+        ZIndex: =2
+
+    HtmlBackgroundGradiente As htmlViewer:
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =360
+        HtmlText: |-
+            ="<div style=""background: linear-gradient(90deg, #7832B4 1.52%, #1176BD 100%);width:100%;height:"&HtmlBackgroundGradiente.Height-1&"px;""></div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =640
+        ZIndex: =3
+
+    Dropdown1 As dropdown:
+        AccessibleLabel: ="Escolha sua unidade escolar"
+        AllowEmptySelection: =true
+        BorderColor: =RGBA(90, 37, 136, 1)
+        BorderThickness: =1
+        ChevronBackground: =RGBA(96, 169, 47, 1)
+        ChevronHoverBackground: =ColorFade(RGBA(230, 230, 230, 1), -20%)
+        Default: =
+        DisabledColor: =RGBA(0, 0, 0, 1)
+        Height: =65
+        HoverFill: =RGBA(230, 230, 230, 1)
+        Items: =Unidades
+        OnChange: |-
+            =If(Dropdown1.SelectedText.Value = "FIEB Administrativo", Navigate(ScreenADM, ScreenTransition.Cover),
+            If(Dropdown1.SelectedText.Value = "FIEB Aldeia da Serra", Navigate(ScreenALDEIA, ScreenTransition.Cover), If(Dropdown1.SelectedText.Value = "FIEB Jardim Belval", Navigate(ScreenBELVAL, ScreenTransition.Cover), If(Dropdown1.SelectedText.Value = "FIEB Alphaville", Navigate(ScreenALPHAVILLE, ScreenTransition.Cover), If(Dropdown1.SelectedText.Value = "FIEB Engenho Novo", Navigate(ScreenENGENHO, ScreenTransition.Cover), If(Dropdown1.SelectedText.Value = "FIEB Jardim Mutinga", Navigate(ScreenMUTINGA, ScreenTransition.Cover), If(Dropdown1.SelectedText.Value = "FIEB Jardim Paulista", Navigate(ScreenPAULISTA, ScreenTransition.Cover), If(Dropdown1.SelectedText.Value = "FIEB Maria Cristina", Navigate(ScreenMCRISTINA, ScreenTransition.Cover), If(Dropdown1.SelectedText.Value = "FIEB Parque Imperial", Navigate(ScreenIMPERIAL, ScreenTransition.Cover), If(Dropdown1.SelectedText.Value = "FIEB Parque Viana", Navigate(ScreenVIANA, ScreenTransition.Cover), Navigate(ScreenUAB, ScreenTransition.Cover)))))))))))
+        PressedFill: =RGBA(204, 204, 204, 1)
+        Reset: =true
+        SelectionFill: =RGBA(179, 179, 179, 1)
+        Size: =21
+        Tooltip: ="Escolha sua unidade escolar"
+        Width: =444
+        X: =98
+        Y: =598
+        ZIndex: =4
+
+    Label1 As label:
+        Align: =Center
+        Color: =RGBA(90, 37, 136, 1)
+        Height: =66
+        Size: =23
+        Text: ="Escolha sua Unidade Escolar"
+        Width: =640
+        Y: =497
+        ZIndex: =5
+
+    Label2 As label:
+        Align: =Center
+        Color: =RGBA(90, 37, 136, 1)
+        FontWeight: =Semibold
+        Height: =70
+        Size: =32
+        Text: ="GESTÃO DE PATRIMÔNIO"
+        Width: =560
+        X: =40
+        Y: =393
+        ZIndex: =6
+
+    Image2 As image:
+        Height: =179
+        Image: ='img-logo-fieb'
+        ImagePosition: =ImagePosition.Fill
+        Width: =322
+        X: =159
+        Y: =90
+        ZIndex: =7
+
+    HtmlBackgroundGradiente_1 As htmlViewer:
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =300
+        HtmlText: |-
+            ="<div style=""background: linear-gradient(90deg, #7832B4 1.52%, #1176BD 100%);width:100%;height:"&HtmlBackgroundGradiente_1.Height-1&"px;""></div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =640
+        Y: =836
+        ZIndex: =9
+

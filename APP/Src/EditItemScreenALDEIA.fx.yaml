@@ -1,0 +1,579 @@
+"EditItemScreenALDEIA As screen.'phoneDetailEditLayout_ver3.0'":
+
+    RectQuickActionBar3_2 As rectangle:
+        Fill: =RGBA(111, 37, 65, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    IconCancel1_2 As icon.Cancel:
+        AccessibleLabel: =Self.Tooltip
+        Height: =88
+        Icon: =Icon.Cancel
+        OnSelect: =ResetForm(EditForm1_2);Back()
+        PaddingBottom: =22
+        PaddingLeft: =22
+        PaddingRight: =22
+        PaddingTop: =22
+        TabIndex: =0
+        Tooltip: ="Cancelar item"
+        Width: =88
+        ZIndex: =2
+
+    IconAccept1_2 As icon.Check:
+        AccessibleLabel: =Self.Tooltip
+        Height: =88
+        Icon: =Icon.Check
+        OnSelect: =SubmitForm(EditForm1_2)
+        PaddingBottom: =22
+        PaddingLeft: =22
+        PaddingRight: =22
+        PaddingTop: =22
+        TabIndex: =0
+        Tooltip: ="Enviar item"
+        Width: =88
+        X: =Parent.Width - Self.Width
+        ZIndex: =3
+
+    LblAppName3_2 As label:
+        Fill: =RGBA(58, 58, 58, 0)
+        Height: =88
+        Size: =27
+        Text: ="PATRIMÔNIO"
+        Width: =Parent.Width - IconCancel1_2.Width - IconAccept1_2.Width
+        Wrap: =false
+        X: =IconCancel1_2.X + IconCancel1_2.Width
+        ZIndex: =4
+
+    EditForm1_2 As form:
+        AcceptsFocus: =false
+        DataSource: ='FIEB ALDEIA DA SERRA | Gestão de Patrimônio'
+        Height: =1046
+        Item: =BrowseGalleryAldeia.Selected
+        OnSuccess: =Notify("Item de patrimônio atualizado com sucesso!", NotificationType.Success); Navigate(ScreenALDEIA, ScreenTransition.Fade)
+        Width: =Parent.Width
+        Y: =90
+        ZIndex: =5
+
+        Chapa_DataCard2_2 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Chapa
+            DisplayMode: =View
+            DisplayName: ="Chapa"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =123
+            MaxLength: =DataSourceInfo([@'FIEB ALDEIA DA SERRA | Gestão de Patrimônio'], DataSourceInfo.MaxLength, "Title")
+            Required: =false
+            Update: =DataCardValue7_2.Text
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey7_2 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue7_2 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey7_2.Y + DataCardKey7_2.Height + 5
+                ZIndex: =2
+
+            ErrorMessage3_2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue7_2.Y + DataCardValue7_2.Height
+                ZIndex: =3
+
+            StarVisible3_2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey7_2.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey7_2.Y
+                ZIndex: =4
+
+        Descrição_DataCard2_2 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Descri_x00e7__x00e3_o"
+            Default: =ThisItem.Descrição
+            DisplayMode: =View
+            DisplayName: ="Descrição"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'FIEB ALDEIA DA SERRA | Gestão de Patrimônio'], DataSourceInfo.MaxLength, "Descri_x00e7__x00e3_o")
+            Required: =false
+            Update: =DataCardValue10_2.Text
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey10_2 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue10_2 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey10_2.Y + DataCardKey10_2.Height + 5
+                ZIndex: =2
+
+            ErrorMessage6_2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue10_2.Y + DataCardValue10_2.Height
+                ZIndex: =3
+
+            StarVisible6_2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey10_2.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey10_2.Y
+                ZIndex: =4
+
+        Local_DataCard2_2 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Local"
+            Default: =ThisItem.Local
+            DisplayMode: |
+                =View
+            DisplayName: ="Local"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =138
+            Required: =false
+            Update: =DataCardValue8_2.Selected
+            Visible: =true
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey8_2 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue8_2 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices([@'FIEB ALDEIA DA SERRA | Gestão de Patrimônio'].Local)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey8_2.Y + DataCardKey8_2.Height + 5
+                ZIndex: =2
+
+            ErrorMessage4_2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue8_2.Y + DataCardValue8_2.Height
+                ZIndex: =3
+
+            StarVisible4_2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey8_2.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey8_2.Y
+                ZIndex: =4
+
+        Sublocal_DataCard2_2 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Sublocal"
+            Default: =ThisItem.Sublocal
+            DisplayMode: =DisplayMode.View
+            DisplayName: ="Sublocal"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =128
+            MaxLength: =DataSourceInfo([@'FIEB ALDEIA DA SERRA | Gestão de Patrimônio'], DataSourceInfo.MaxLength, "Sublocal")
+            Required: =false
+            Update: =Upper(DataCardValue9_2.Text)
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey9_2 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue9_2 As text:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                HoverFill: =RGBA(230, 230, 230, 1)
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey9_2.Y + DataCardKey9_2.Height + 5
+                ZIndex: =2
+
+            ErrorMessage5_2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue9_2.Y + DataCardValue9_2.Height
+                ZIndex: =3
+
+            StarVisible5_2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey9_2.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey9_2.Y
+                ZIndex: =4
+
+        "'Departamento/Sala_DataCard2' As typedDataCard.comboBoxEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Departamento_x002f_Sala"
+            Default: =ThisItem.'Departamento/Sala'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Departamento/Sala"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue13.Selected
+            Width: =640
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey13 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue13 As combobox:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                ChevronBackground: |
+                    =RGBA(111, 37, 65, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(0, 0, 0, 1), -20%)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                HoverFill: =RGBA(230, 230, 230, 1)
+                Items: =Choices([@'FIEB ALDEIA DA SERRA | Gestão de Patrimônio'].'Departamento/Sala')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedFill: =RGBA(179, 179, 179, 1)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('FIEB ALDEIA DA SERRA | Gestão de Patrimônio'.'Departamento/Sala',DataCardValue13.SearchText)
+                SelectionFill: =RGBA(111, 37, 65, 1)
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey13.Y + DataCardKey13.Height + 5
+                ZIndex: =2
+
+            ErrorMessage10 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue13.Y + DataCardValue13.Height
+                ZIndex: =3
+
+            StarVisible10 As label:
+                Align: =Align.Center
+                Height: =DataCardKey13.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey13.Y
+                ZIndex: =4
+
+        "'Enviar para outra Unidade?_DataCard2_2' As typedDataCard.toggleEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Enviar_x0020_para_x0020_outra_x0"
+            Default: =ThisItem.'Enviar_para_outra_unidade?'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Enviar para outra Unidade?"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue11_2.Value
+            Visible: =true
+            Width: =640
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey11_2 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue11_2 As toggleSwitch:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                Height: =49
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                TrueFill: =RGBA(111, 3, 65, 1)
+                Width: =252
+                X: =30
+                Y: =DataCardKey11_2.Y + DataCardKey11_2.Height + 5
+                ZIndex: =2
+
+            ErrorMessage7_2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue11_2.Y + DataCardValue11_2.Height
+                ZIndex: =3
+
+            StarVisible7_2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey11_2.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey11_2.Y
+                ZIndex: =4
+
+        "'Unidade de destino_DataCard1' As typedDataCard.comboBoxEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Unidade_x0020_de_x0020_destino"
+            Default: =ThisItem.Unidade_de_destino
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Unidade de destino"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue5.Selected
+            Visible: =If(DataCardValue11_2.Value=true,true,false)
+            Width: =640
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey5 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue5 As combobox:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                ChevronBackground: =RGBA(111, 37, 65, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(0, 0, 0, 1), -20%)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                HoverFill: =RGBA(230, 230, 230, 1)
+                Items: =Choices([@'FIEB ALDEIA DA SERRA | Gestão de Patrimônio'].Unidade_de_destino)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedFill: =RGBA(179, 179, 179, 1)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('FIEB ALDEIA DA SERRA | Gestão de Patrimônio'.Unidade_de_destino,DataCardValue5.SearchText)
+                SelectionFill: =RGBA(111, 37, 65, 1)
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey5.Y + DataCardKey5.Height + 5
+                ZIndex: =2
+
+            ErrorMessage2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue5.Y + DataCardValue5.Height
+                ZIndex: =3
+
+            StarVisible2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey5.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey5.Y
+                ZIndex: =4
+

@@ -1,0 +1,6 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =/* Collections */
+        /*ClearCollect(tblAdministrativo; 'FIEB ADMINISTRATIVO | Gestão de Patrimônio')*/
+
